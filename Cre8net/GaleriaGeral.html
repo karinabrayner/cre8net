@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cre8Net - Galeria</title>
+
+    <link rel="stylesheet" href="Homestyle.css">
+
+    <style>
+
+        /* ==========================
+           CABEÇALHO DA GALERIA
+        ========================== */
+
+        .galeria-header {
+            text-align: center;
+
+            padding: 50px 20px 30px;
+        }
+
+        .galeria-header h1 {
+            color: rgb(120, 150, 190);
+
+            font-size: 42px;
+
+            margin-bottom: 10px;
+        }
+
+        .galeria-header p {
+            color: #555;
+
+            font-size: 17px;
+        }
+
+
+        /* ==========================
+           BOTÃO PUBLICAR
+        ========================== */
+
+        .publicar-area {
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+        .botao-publicar {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            background-color:
+                rgb(150, 180, 219);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 8px;
+
+            transition: .3s;
+        }
+
+        .botao-publicar:hover {
+            background-color:
+                rgb(120, 160, 205);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ==========================
+           GALERIA
+        ========================== */
+
+        .galeria {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 20px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* ==========================
+           CARD
+        ========================== */
+
+        .card {
+            background-color: white;
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 7px 15px rgba(0, 0, 0, .12);
+
+            transition: .3s;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 12px 22px rgba(0, 0, 0, .18);
+        }
+
+
+        /* ==========================
+           IMAGEM
+        ========================== */
+
+        .card-imagem {
+            width: 100%;
+
+            height: 230px;
+
+            object-fit: cover;
+
+            display: block;
+
+            background-color:
+                rgb(150, 180, 219);
+        }
+
+
+        /* ==========================
+           INFORMAÇÕES
+        ========================== */
+
+        .card-conteudo {
+            padding: 17px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            flex: 1;
+        }
+
+        .card h2 {
+            color: rgb(90, 110, 140);
+
+            font-size: 20px;
+
+            margin-bottom: 5px;
+        }
+
+        .artista {
+            color:
+                rgb(150, 180, 219);
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            margin-bottom: 10px;
+        }
+
+        .descricao {
+            color: #666;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            margin-bottom: 15px;
+
+            flex: 1;
+        }
+
+
+        /* ==========================
+           RODAPÉ DO CARD
+        ========================== */
+
+        .card-acoes {
+            display: flex;
+
+            justify-content: flex-end;
+
+            align-items: center;
+
+            border-top:
+                1px solid #eee;
+
+            padding-top: 10px;
+        }
+
+
+        /* ==========================
+           ESTRELA
+        ========================== */
+
+        .like-button {
+            border: none;
+
+            background-color: transparent;
+
+            color: #aaa;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            padding: 6px 10px;
+
+            border-radius: 8px;
+
+            transition: .2s;
+        }
+
+        .like-button:hover {
+            background-color:
+                rgba(230, 179, 85, .15);
+
+            color:
+                rgb(230, 179, 85);
+
+            transform: scale(1.1);
+        }
+
+        .like-button.curtido {
+            color:
+                rgb(230, 179, 85);
+        }
+
+        .like-button span {
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-left: 3px;
+        }
+
+
+        /* ==========================
+           CARREGANDO
+        ========================== */
+
+        .carregando {
+            grid-column: 1 / -1;
+
+            text-align: center;
+
+            padding: 50px;
+
+            color: #666;
+
+            font-size: 18px;
+        }
+
+
+        /* ==========================
+           SEM ARTES
+        ========================== */
+
+        .sem-artes {
+            grid-column: 1 / -1;
+
+            text-align: center;
+
+            background-color: white;
+
+            border-radius: 15px;
+
+            padding: 50px;
+
+            box-shadow:
+                0 7px 15px rgba(0, 0, 0, .10);
+        }
+
+        .sem-artes h2 {
+            color:
+                rgb(120, 150, 190);
+
+            margin-bottom: 10px;
+        }
+
+        .sem-artes p {
+            color: #666;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* ==========================
+           RESPONSIVO
+        ========================== */
+
+        @media (max-width: 1000px) {
+
+            .galeria {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 750px) {
+
+            .galeria {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .galeria {
+                grid-template-columns: 1fr;
+
+                padding: 20px;
+            }
+
+            .galeria-header h1 {
+                font-size: 34px;
+            }
+
+            .card-imagem {
+                height: 250px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================
+         MENU
+    ========================== -->
+
+    <nav>
+
+        <ul class="Lista-de-links">
+
+            <li>
+                <a href="Home.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="GaleriaGeral.html">
+                    Galeria
+                </a>
+            </li>
+
+            <li>
+                <a href="GaleriaPessoal.html">
+                    Minha Galeria
+                </a>
+            </li>
+
+            <li>
+                <a href="PerfilPessoal.html">
+                    Meu Perfil
+                </a>
+            </li>
+
+            <li>
+                <a href="Login.html">
+                    Log-in
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ==========================
+         CABEÇALHO
+    ========================== -->
+
+    <header class="galeria-header">
+
+        <h1>
+            Galeria Cre8Net
+        </h1>
+
+        <p>
+            Descubra, admire e apoie o trabalho
+            de outros artistas.
+        </p>
+
+    </header>
+
+
+    <!-- ==========================
+         BOTÃO PUBLICAR
+    ========================== -->
+
+    <div class="publicar-area">
+
+        <a
+            href="PublicarArte.html"
+            class="botao-publicar"
+        >
+            + Publicar minha arte
+        </a>
+
+    </div>
+
+
+    <!-- ==========================
+         GALERIA
+    ========================== -->
+
+    <main>
+
+        <section
+            class="galeria"
+            id="galeria"
+        >
+
+            <div class="carregando">
+                Carregando artes...
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Cre8Net — Um espaço para criatividade e expressão.
+        </p>
+
+    </footer>
+
+
+    <!-- ==========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const galeria =
+            document.getElementById("galeria");
+
+
+        // ==========================================
+        // CARREGAR ARTES
+        // ==========================================
+
+        async function carregarArtes() {
+
+            try {
+
+                const resposta =
+                    await fetch(
+                        "carregar_artes.php"
+                    );
+
+
+                if (!resposta.ok) {
+
+                    throw new Error(
+                        "Erro ao acessar o servidor."
+                    );
+
+                }
+
+
+                const artes =
+                    await resposta.json();
+
+
+                galeria.innerHTML = "";
+
+
+                // ==================================
+                // NENHUMA ARTE
+                // ==================================
+
+                if (artes.length === 0) {
+
+                    galeria.innerHTML = `
+
+                        <div class="sem-artes">
+
+                            <h2>
+                                Ainda não existem artes!
+                            </h2>
+
+                            <p>
+                                Seja o primeiro artista
+                                a publicar uma criação.
+                            </p>
+
+                            <a
+                                href="PublicarArte.html"
+                                class="botao-publicar"
+                            >
+                                Publicar minha arte
+                            </a>
+
+                        </div>
+
+                    `;
+
+                    return;
+                }
+
+
+                // ==================================
+                // CRIA OS CARDS
+                // ==================================
+
+                artes.forEach(arte => {
+
+                    const card =
+                        document.createElement("article");
+
+
+                    card.classList.add("card");
+
+
+                    card.innerHTML = `
+
+                        <img
+                            class="card-imagem"
+                            src="${arte.imagem}"
+                            alt="${arte.titulo}"
+                            loading="lazy"
+                        >
+
+
+                        <div class="card-conteudo">
+
+                            <h2>
+                                ${escapeHTML(arte.titulo)}
+                            </h2>
+
+
+                            <p class="artista">
+                                por
+                                ${escapeHTML(arte.usuario)}
+                            </p>
+
+
+                            <p class="descricao">
+                                ${escapeHTML(
+                                    arte.descricao || ""
+                                )}
+                            </p>
+
+
+                            <div class="card-acoes">
+
+                                <button
+                                    class="like-button"
+                                    data-arte="${arte.id}"
+                                    title="Dar estrela"
+                                >
+
+                                    ⭐
+
+                                    <span>
+                                        ${arte.total_likes}
+                                    </span>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+
+                    galeria.appendChild(card);
+
+                });
+
+
+                // Configura as estrelas
+
+                configurarLikes();
+
+            }
+
+            catch (erro) {
+
+                console.error(erro);
+
+
+                galeria.innerHTML = `
+
+                    <div class="sem-artes">
+
+                        <h2>
+                            Ocorreu um erro
+                        </h2>
+
+                        <p>
+                            Não foi possível carregar
+                            as artes.
+                        </p>
+
+                        <button
+                            class="botao-publicar"
+                            onclick="carregarArtes()"
+                        >
+                            Tentar novamente
+                        </button>
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+        // ==========================================
+        // PROTEÇÃO CONTRA HTML
+        // ==========================================
+
+        function escapeHTML(texto) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent =
+                texto;
+
+            return div.innerHTML;
+
+        }
+
+
+        // ==========================================
+        // CONFIGURA ESTRELAS
+        // ==========================================
+
+        function configurarLikes() {
+
+            const botoes =
+                document.querySelectorAll(
+                    ".like-button"
+                );
+
+
+            botoes.forEach(botao => {
+
+                botao.addEventListener(
+                    "click",
+                    async function () {
+
+                        const arteId =
+                            this.dataset.arte;
+
+
+                        const dados =
+                            new FormData();
+
+
+                        dados.append(
+                            "arte_id",
+                            arteId
+                        );
+
+
+                        try {
+
+                            const resposta =
+                                await fetch(
+                                    "like.php",
+                                    {
+                                        method: "POST",
+                                        body: dados
+                                    }
+                                );
+
+
+                            const resultado =
+                                await resposta.json();
+
+
+                            // ==========================
+                            // NÃO ESTÁ LOGADO
+                            // ==========================
+
+                            if (!resultado.sucesso) {
+
+                                alert(
+                                    resultado.mensagem
+                                );
+
+                                return;
+                            }
+
+
+                            // ==========================
+                            // ATUALIZA CONTADOR
+                            // ==========================
+
+                            this.querySelector(
+                                "span"
+                            ).textContent =
+                                resultado.total;
+
+
+                            // ==========================
+                            // ATUALIZA ESTRELA
+                            // ==========================
+
+                            if (
+                                resultado.curtido
+                            ) {
+
+                                this.classList.add(
+                                    "curtido"
+                                );
+
+                            } else {
+
+                                this.classList.remove(
+                                    "curtido"
+                                );
+
+                            }
+
+                        }
+
+                        catch (erro) {
+
+                            console.error(erro);
+
+                            alert(
+                                "Não foi possível registrar a estrela."
+                            );
+
+                        }
+
+                    }
+                );
+
+            });
+
+        }
+
+
+        // ==========================================
+        // INICIA A GALERIA
+        // ==========================================
+
+        carregarArtes();
+
+    </script>
+
+
+</body>
+
+</html>

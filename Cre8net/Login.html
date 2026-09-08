@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Login</title>
 
-    <link rel="stylesheet" href="Cadastro.css">
+    <link rel="stylesheet" href="Login.css">
 </head>
 
 <body>
@@ -21,34 +21,19 @@
         </ul>
     </nav>
 
+
     <main class="container">
 
         <div class="formulario">
 
-            <h1>Cadastro</h1>
+            <h1>Login</h1>
 
-            <form id="cadastroForm"
-            action="cadastro.php"
-            method="POST"
-            >
-
-                <label for="usuario">Nome de Usuário</label>
-                <input
-                    type="text"
-                    id="usuario"
-                    name="usuario"
-                    placeholder="Digite seu nome"
-                    required>
-
-                <label for="data">Data de Nascimento</label>
-                <input
-                    type="date"
-                    id="data"
-                    name="data_nascimento"
-                    required>
+            <form id="loginForm"
+            form action="login.php" method="POST">
 
                 <label for="email">E-mail</label>
-                <input
+
+                <input 
                     type="email"
                     id="email"
                     name="email"
@@ -57,7 +42,9 @@
 
                 <p id="erroEmail" class="erro"></p>
 
+
                 <label for="senha">Senha</label>
+
                 <input
                     type="password"
                     id="senha"
@@ -65,24 +52,21 @@
                     placeholder="Digite sua senha"
                     required>
 
-                <label for="confirmarSenha">Confirmar Senha</label>
-                <input
-                    type="password"
-                    id="confirmarSenha"
-                    name="confirmar_senha"
-                    placeholder="Confirme sua senha"
-                    required>
-
                 <p id="erroSenha" class="erro"></p>
 
+
                 <button type="submit">
-                    Cadastrar
+                    Entrar
                 </button>
 
-                <p class="login">
-                    Já tem uma conta?
-                    <a href="Login.html">Faça login</a>
+
+                <p class="cadastro">
+                    Não tem uma conta?
+                    <a href="Cadastro.html">
+                        Cadastre-se
+                    </a>
                 </p>
+
 
             </form>
 
@@ -90,7 +74,8 @@
 
     </main>
 
-    <script src="Cadastro.js"></script>
+
+    <script src="Login.js"></script>
 
 </body>
 

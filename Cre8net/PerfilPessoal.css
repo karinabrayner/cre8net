@@ -1,0 +1,24 @@
+/* Menu */
+nav {
+    background-color: rgb(150, 180, 219);
+    width: 100%;
+}
+
+.Lista-de-links {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+

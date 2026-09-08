@@ -1,0 +1,501 @@
+/* ==========================
+   CONFIGURAÇÕES GERAIS
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family:
+        'Gill Sans',
+        'Gill Sans MT',
+        Calibri,
+        'Trebuchet MS',
+        sans-serif;
+}
+
+body {
+    background-color: rgb(240, 218, 178);
+    color: #333;
+    min-height: 100vh;
+}
+
+
+/* ==========================
+   NAVBAR
+========================== */
+
+nav {
+    width: 100%;
+    background-color: rgb(150, 180, 219);
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, .2);
+}
+
+.Lista-de-links {
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+
+    padding: 18px;
+}
+
+.Lista-de-links li {
+    transition: .3s;
+}
+
+.Lista-de-links li:hover {
+    transform: translateY(-2px);
+}
+
+.Lista-de-links a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    transition: .3s;
+}
+
+.Lista-de-links a:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+
+/* ==========================
+   CABEÇALHO / HERO
+========================== */
+
+.cabecalho {
+    min-height: 430px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:
+        linear-gradient(
+            rgba(150, 180, 219, .90),
+            rgba(150, 180, 219, .90)
+        );
+}
+
+.conteudo-header {
+    max-width: 750px;
+}
+
+.subtitulo {
+    display: block;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 10px;
+}
+
+.cabecalho h1 {
+    color: white;
+
+    font-size: 72px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        3px 4px 0 rgba(0, 0, 0, .08);
+}
+
+.cabecalho p {
+    color: white;
+
+    font-size: 21px;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==========================
+   BOTÕES
+========================== */
+
+.botoes-header {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.botao {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.botao:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, .15);
+}
+
+.principal {
+    background-color: white;
+
+    color: rgb(120, 150, 190);
+}
+
+.secundario {
+    background-color: transparent;
+
+    color: white;
+
+    border: 2px solid white;
+}
+
+.secundario:hover {
+    background-color: white;
+
+    color: rgb(120, 150, 190);
+}
+
+
+/* ==========================
+   APRESENTAÇÃO
+========================== */
+
+.apresentacao {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 55px 20px 35px;
+
+    text-align: center;
+}
+
+.apresentacao h2 {
+    color: rgb(120, 150, 190);
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+.apresentacao p {
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================
+   GALERIA
+========================== */
+
+.galeria-section {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+}
+
+.titulo-galeria {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.titulo-galeria h2 {
+    color: rgb(100, 130, 170);
+
+    font-size: 28px;
+}
+
+.titulo-galeria a {
+    color: rgb(120, 150, 190);
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.titulo-galeria a:hover {
+    color: rgb(90, 120, 160);
+}
+
+
+/* ==========================
+   CARDS
+========================== */
+
+.galeria {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+    background-color: white;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 15px rgba(0, 0, 0, .12);
+
+    transition: .3s;
+
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 22px rgba(0, 0, 0, .18);
+}
+
+
+/* Área que futuramente receberá as imagens */
+
+.imagem {
+    height: 190px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgb(150, 180, 219),
+            rgb(172, 172, 172)
+        );
+
+    font-size: 65px;
+}
+
+.card h3 {
+    color: rgb(90, 110, 140);
+
+    font-size: 19px;
+
+    padding:
+        15px 15px 5px;
+}
+
+.card p {
+    color: #777;
+
+    font-size: 14px;
+
+    padding:
+        0 15px 18px;
+}
+
+
+/* ==========================
+   CONVITE
+========================== */
+
+.convite {
+    margin-top: 70px;
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    background-color: white;
+
+    box-shadow:
+        0 -3px 10px rgba(0, 0, 0, .05);
+}
+
+.convite h2 {
+    color: rgb(120, 150, 190);
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.convite p {
+    color: #555;
+
+    font-size: 17px;
+
+    margin-bottom: 25px;
+}
+
+.convite-botao {
+    background-color: rgb(150, 180, 219);
+
+    color: white;
+}
+
+.convite-botao:hover {
+    background-color: rgb(120, 160, 205);
+}
+
+
+/* ==========================
+   RODAPÉ
+========================== */
+
+footer {
+    background-color: rgb(150, 180, 219);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    font-size: 14px;
+}
+
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media (max-width: 900px) {
+
+    .galeria {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .Lista-de-links {
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+    .cabecalho {
+        min-height: 400px;
+
+        padding: 40px 20px;
+    }
+
+    .cabecalho h1 {
+        font-size: 52px;
+    }
+
+    .cabecalho p {
+        font-size: 18px;
+    }
+
+    .botoes-header {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .botao {
+        width: 220px;
+    }
+
+    .titulo-galeria {
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .imagem {
+        height: 220px;
+    }
+
+}
+
+.like-button {
+    border: none;
+    background: transparent;
+
+    color: #aaa;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    transition: .2s;
+}
+
+.like-button:hover {
+    background-color: rgba(230, 179, 85, .15);
+
+    color: rgb(230, 179, 85);
+
+    transform: scale(1.1);
+}
+
+.like-button.curtido {
+    color: rgb(230, 179, 85);
+}
+
+.like-button span {
+    font-size: 14px;
+
+    margin-left: 3px;
+}

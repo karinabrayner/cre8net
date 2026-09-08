@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-color: rgb(240,218,178);
+    min-height: 100vh;
+}
+
+
+/* ==========================
+   NAVBAR
+========================== */
+
+nav{
+    width: 100%;
+    background-color: rgb(150,180,219);
+    box-shadow: 0 3px 8px rgba(0,0,0,.2);
+}
+
+.Lista-de-links{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 18px;
+}
+
+.Lista-de-links li{
+    transition: .3s;
+}
+
+.Lista-de-links li:hover{
+    transform: translateY(-2px);
+}
+
+.Lista-de-links a{
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.Lista-de-links a:hover{
+    background-color: rgba(255,255,255,.2);
+}
+
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
+}
+
+
+/* ==========================
+   CARD LOGIN
+========================== */
+
+.formulario{
+
+    width:100%;
+    max-width:420px;
+
+    background-color:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 10px 20px rgba(0,0,0,.15);
+
+}
+
+
+/* ==========================
+   TITULO
+========================== */
+
+h1{
+
+    text-align:center;
+
+    color:rgb(150,180,219);
+
+    margin-bottom:30px;
+
+}
+
+
+/* ==========================
+   FORMULARIO
+========================== */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+label{
+
+    margin-top:15px;
+
+    margin-bottom:6px;
+
+    font-weight:bold;
+
+}
+
+
+input{
+
+    padding:12px;
+
+    border:
+
+    2px solid rgb(230,179,85);
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+
+input:focus{
+
+    outline:none;
+
+    border-color:rgb(150,180,219);
+
+    box-shadow:
+    0 0 8px rgba(150,180,219,.4);
+
+}
+
+
+/* ==========================
+   ERROS
+========================== */
+
+.erro{
+
+    color:red;
+
+    font-size:14px;
+
+    min-height:18px;
+
+    margin-top:5px;
+
+}
+
+
+/* ==========================
+   BOTÃO
+========================== */
+
+
+button{
+
+    margin-top:25px;
+
+    padding:13px;
+
+    background-color:
+    rgb(150,180,219);
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+button:hover{
+
+    background-color:
+    rgb(120,160,205);
+
+    transform:scale(1.02);
+
+}
+
+
+/* ==========================
+   CADASTRO
+========================== */
+
+.cadastro{
+
+    text-align:center;
+
+    margin-top:20px;
+
+}
+
+
+.cadastro a{
+
+    color:rgb(150,180,219);
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+}
+
+
+.cadastro a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media(max-width:600px){
+
+    .Lista-de-links{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        text-align:center;
+
+    }
+
+
+    .formulario{
+
+        margin:20px;
+
+        padding:25px;
+
+    }
+
+}
